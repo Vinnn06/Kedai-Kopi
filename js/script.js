@@ -14,3 +14,11 @@ document.addEventListener('click', function(e) {
         navbarNav.classList.remove('active');
     }
 });
+
+// function untuk menghilangkan path #about dll
+function scrollToSection(id) {
+    const section = document.getElementById(id);
+    if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+    }
+}
