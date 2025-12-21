@@ -16,9 +16,12 @@ document.addEventListener('click', function(e) {
 });
 
 // function untuk menghilangkan path #about dll
-function scrollToSection(id) {
+function scrollToSection(event, id) {
+  event.preventDefault(); // mencegah lompat ke home
+
     const section = document.getElementById(id);
     if (section) {
         section.scrollIntoView({ behavior: "smooth" });
     }
 }
+
