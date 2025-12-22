@@ -25,3 +25,29 @@ function scrollToSection(event, id) {
     }
 }
 
+// Toggle class active search form
+const searchForm = document.querySelector('.search-form');
+const searchBox = document.querySelector('#search-box');
+const iconSearch = document.querySelector('.search-icon');
+
+// ketika icon search di klik
+document.querySelector('#search').onclick = (e) => {
+    iconSearch.classList.toggle('active');
+    searchForm.classList.toggle('active');
+    searchBox.focus();
+    e.preventDefault();
+};
+
+// klik di luar search form untuk menghilangkan search form 
+const search = document.querySelector('#search');
+document.addEventListener('click', function(e) {
+    if(!search.contains(e.target) && !searchForm.contains(e.target)) {
+        searchForm.classList.remove('active');
+    }
+});
+
+document.addEventListener('click', function(e) {
+    if(!search.contains(e.target) && !iconSearch.contains(e.target)) {
+        iconSearch.classList.remove('active');
+    }
+});
