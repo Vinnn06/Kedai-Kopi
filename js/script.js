@@ -51,3 +51,18 @@ document.addEventListener('click', function(e) {
         iconSearch.classList.remove('active');
     }
 });
+
+// Toggle class active untuk shopping cart
+const cartIcon = document.querySelector('.shopping-cart');
+document.querySelector('#shopping-cart-btn').onclick = (e) => {
+    cartIcon.classList.toggle('active');
+    e.preventDefault();
+}
+
+// klik di luar shopping cart untuk menghilangkan shopping cart
+const shpCart = document.querySelector('#shopping-cart-btn');
+document.addEventListener('click', function(e) {
+    if(!shpCart.contains(e.target) && !cartIcon.contains(e.target)) {
+        cartIcon.classList.remove('active');
+    }
+});
