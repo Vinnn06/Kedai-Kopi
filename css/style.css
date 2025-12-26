@@ -1,6 +1,7 @@
 :root {
     --primary: #b6895b;
     --bg: #010101;
+    --hover: #cc9660;
 }
 
 * {
@@ -289,16 +290,21 @@ html {
 .hero .content .cta {
     margin-top: 1rem;
     display: inline-block;
+    border-radius: 5px;
     padding: 1rem 3rem;
     font-size: 1.2rem;
     color: #ffffff;
     background-color: var(--primary);
     border-radius: 0.5rem;
     box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
-    -webkit-border-radius: 0.5rem;
-    -moz-border-radius: 0.5rem;
-    -ms-border-radius: 0.5rem;
-    -o-border-radius: 0.5rem;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.hero .content .cta:hover {
+    background-color: var(--hover);
 }
 
 /* about section */
@@ -436,13 +442,13 @@ html {
     font-size: 1.6rem;
 }
 
-.products .product-stars {
+.product-stars {
     font-size: 1.7rem;
     padding: .4rem;
     color: var(--primary);
 }
 
-.products .product-stars .star-full {
+.product-stars .star-full {
     fill: var(--primary);
 }
 
@@ -498,10 +504,19 @@ html {
     margin-top: 2rem;
     display: inline;
     padding: 1rem 3rem;
+    border-radius: 5px;
     font-size: 1.5rem;
     color: #ffffff;
     background-color: var(--primary);
     cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.contact .row form .btn:hover {
+    background-color: var(--hover);
 }
 
 /* Footer */
@@ -542,6 +557,97 @@ footer .credit a {
     color: var(--bg);
     font-weight: 700;
 }
+
+/* modal box */
+/* item detail */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-container {
+    position: relative;
+    background-color: #ffffff95;
+    color: var(--bg);
+    margin: 15% auto;
+    padding: 1.2rem;
+    border: 1px solid #666;
+    width: 80%;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    animation: animateModal 0.5s;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    -webkit-animation: animateModal 0.5s;
+}
+
+.modal-container .close-icon {
+    position: absolute;
+    right: 1.2rem;
+    color: var(--bg);
+}
+
+.modal-content {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.modal-container img {
+    height: 15rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+
+.modal-content p {
+    font-size: 1rem;
+    line-height: 1.4rem;
+    margin-top: 1.2rem;
+}
+
+.modal-content a {
+    display: flex;
+    gap: 1rem;
+    width: 12rem;
+    background-color: var(--primary);
+    color: #fff;
+    margin-top: 1rem;
+    padding: 1rem 1.6rem;
+}
+
+.modal-content .product-content .add-btn {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.modal-content .product-content .add-btn:hover {
+    background-color: #c79360;
+}
+
+/* modal animation */
+@keyframes animateModal {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+
 
 /* media queries */
 /* laptop */
@@ -649,6 +755,10 @@ footer .credit a {
 
     .products .product-img img {
         height: 20rem;
+    }
+
+    .modal-content{
+        flex-wrap: wrap;
     }
 }
 
